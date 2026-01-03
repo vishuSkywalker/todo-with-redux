@@ -1,11 +1,23 @@
 :root {
   --primary: #6366f1;
   --primary-hover: #4f46e5;
-  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(255, 255, 255, 0.5);
   --text-main: #1f2937;
   --text-muted: #6b7280;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 * {
@@ -16,7 +28,10 @@
 }
 
 body {
-  background: var(--bg-gradient);
+	background: var(--bg-gradient);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -30,7 +45,6 @@ body {
   justify-content: center;
 }
 
-/* Glassmorphism Card */
 .glass-card {
   background: var(--glass-bg);
   width: 100%;
